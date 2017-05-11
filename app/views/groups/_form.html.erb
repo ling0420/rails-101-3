@@ -1,7 +1,7 @@
 <%= form_for @group do |f| %>
 <% if @group.errors.any? %>
 <ul>
-  <% if @group.errors.full_messages.each do |msg| %>
+  <% @group.errors.full_messages.each do |msg| %>
   <li><%= msg %></li>
   <% end %>
 </ul>
@@ -15,5 +15,5 @@
 <%= f.text_area :description %>
 <br>
 
-<%= f.submit "Sumbit", disable_with => 'Submiting...' %>
+<%= f.submit "Sumbit", :disable_with => 'Submiting...' %>
 <% end %>
